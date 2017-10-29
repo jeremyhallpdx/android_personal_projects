@@ -12,4 +12,6 @@
     <string name="display_avg_draw">0.000</string>
     <string name="display_avg_reload">0.000</string>
     <string name="display_avg_split">0.000</string>
+    <string name="button_shooter_ready">Shooter Ready</string>
+    <string name="button_track_new_round">Track New Round</string>
 </resources>

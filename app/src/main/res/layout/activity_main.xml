@@ -49,7 +49,7 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <TextView
-        android:id="@+id/string_label_accuracy"
+        android:id="@+id/label_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -60,10 +60,11 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/label_accuracy" />
 
     <TextView
-        android:id="@+id/string_display_accuracy"
+        android:id="@+id/display_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -75,10 +76,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/string_label_accuracy" />
+        app:layout_constraintTop_toBottomOf="@+id/label_accuracy"
+        tools:text="@string/display_accuracy" />
 
     <TextView
-        android:id="@+id/string_label_critical"
+        android:id="@+id/label_critical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -89,10 +91,11 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:text="@string/label_critical" />
 
     <TextView
-        android:id="@+id/string_display_critical"
+        android:id="@+id/display_critical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -105,10 +108,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/string_label_critical" />
+        app:layout_constraintTop_toBottomOf="@+id/label_critical"
+        tools:text="@string/display_critical" />
 
     <TextView
-        android:id="@+id/string_label_shots"
+        android:id="@+id/label_shots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -119,10 +123,11 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="@string/label_shots" />
 
     <TextView
-        android:id="@+id/string_display_shots"
+        android:id="@+id/display_shots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -134,5 +139,22 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/string_label_shots" />
+        app:layout_constraintTop_toBottomOf="@+id/label_shots"
+        tools:text="@string/display_shots" />
+
+    <Button
+        android:id="@+id/button_track_new_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="trackRound"
+        android:text="@string/button_track_new_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        tools:text="@string/button_track_new_round" />
 </android.support.constraint.ConstraintLayout>
