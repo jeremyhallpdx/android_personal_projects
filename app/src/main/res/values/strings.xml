@@ -6,12 +6,18 @@
     <string name="label_avg_draw">Draw (avg)</string>
     <string name="label_avg_reload">Reload (avg)</string>
     <string name="label_split">Split (avg)</string>
+    <string name="list_record_shot">Shot</string>
+    <string name="list_record_shot_time">0.000</string>
+    <string name="list_record_split">0.000</string>
     <string name="display_accuracy">%</string>
     <string name="display_critical">%</string>
     <string name="display_shots">0</string>
     <string name="display_avg_draw">0.000</string>
     <string name="display_avg_reload">0.000</string>
     <string name="display_avg_split">0.000</string>
+    <string name="display_shot_timer">00:00:000</string>
     <string name="button_shooter_ready">Shooter Ready</string>
     <string name="button_track_new_round">Track New Round</string>
+    <string name="button_bang">Bang!</string>
+    <string name="listView_recorded_shots"></string>
 </resources>
