@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Average Joe Shot Timer</string>
+    <string name="label_accuracy">Accuracy</string>
+    <string name="label_critical">Critical</string>
+    <string name="label_shots">Shots</string>
+    <string name="label_avg_draw">Draw (avg)</string>
+    <string name="label_avg_reload">Reload (avg)</string>
+    <string name="label_split">Split (avg)</string>
+    <string name="display_accuracy">%</string>
+    <string name="display_critical">%</string>
+    <string name="display_shots">0</string>
+    <string name="display_avg_draw">0.000</string>
+    <string name="display_avg_reload">0.000</string>
+    <string name="display_avg_split">0.000</string>
+</resources>
