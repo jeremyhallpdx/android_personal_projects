@@ -17,7 +17,7 @@ public class TrackRound extends AppCompatActivity {
     private TextView displayTimer;
     private Button shooterReady, bang;
     private ListView listviewShotsRecorded;
-    private List<String> listArrayShots;
+    private List<ShotsRecord> listArrayShots;
     private ShotsAdapter adapter;
     private Handler handler;
 
@@ -25,6 +25,18 @@ public class TrackRound extends AppCompatActivity {
     private long shotRecordTime, shotRecordSplit = 0L;
     private String shotReocordTitle;
     private int minutes, seconds, milliseconds;
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public int getSeconds() {
+        return seconds;
+    }
+
+    public int getMilliseconds() {
+        return milliseconds;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +72,9 @@ public class TrackRound extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                listArrayShots.add(displayTimer.getText().toString());
+                ShotsRecord shotRecord = new ShotsRecord(minutes, seconds, milliseconds, updateTime);
+
+                listArrayShots.add(shotRecord);
                 System.out.println(String.format(displayTimer.getText().toString()));
                 adapter.notifyDataSetChanged();
             }

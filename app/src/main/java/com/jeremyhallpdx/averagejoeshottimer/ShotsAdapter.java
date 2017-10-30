@@ -20,9 +20,9 @@ public class ShotsAdapter extends ArrayAdapter {
     private static final String TAG = "ShotsAdapter";
     private final int layoutResource;
     private final LayoutInflater layoutInflater;
-    private List<String> shots;
+    private List<ShotsRecord> shots;
 
-    public ShotsAdapter(@NonNull Context context, int resource, List<String> shots) {
+    public ShotsAdapter(@NonNull Context context, int resource, List<ShotsRecord> shots) {
         super(context, resource);
         this.layoutResource = resource;
         this.layoutInflater = LayoutInflater.from(context);
@@ -53,8 +53,11 @@ public class ShotsAdapter extends ArrayAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        ShotsRecord currentShot = shots.get(position);
+        ShotsRecord prevShot = null;
+
         String shotText = "Shot " + (position + 1);
-        String shotTime = shots.get(position);
+        String shotTime = currentShot.getTime();
         String shotSplit = "";
 
         viewHolder.recordShot.setText(shotText);
@@ -62,7 +65,8 @@ public class ShotsAdapter extends ArrayAdapter {
 
         if (position > 0) {
 
-            shotSplit = shots.get(position - 1);
+            prevShot = shots.get(position - 1);
+            shotSplit = currentShot.getSplit(prevShot);
         }
 
         viewHolder.recordSplit.setText(shotSplit);
