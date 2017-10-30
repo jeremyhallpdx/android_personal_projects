@@ -16,7 +16,6 @@ public class TrackRound extends AppCompatActivity {
 
     private TextView displayTimer;
     private Button shooterReady,clearTimer, bang;
-    private ListView listviewShotsRecorded;
     private List<ShotsRecord> listArrayShots;
     private ShotsAdapter adapter;
     private Handler handler;
@@ -36,13 +35,16 @@ public class TrackRound extends AppCompatActivity {
         clearTimer = findViewById(R.id.button_clear_timer_data);
         bang = findViewById(R.id.button_bang);
         displayTimer = findViewById(R.id.display_shot_timer);
-        listviewShotsRecorded = findViewById(R.id.listview_shots_recorded);
+        ListView listShotsRecorded = findViewById(R.id.listview_shots_recorded);
+
+        bang.setEnabled(false);
+        clearTimer.setEnabled(false);
 
         handler = new Handler();
 
         listArrayShots = new ArrayList<>();
         adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
-        listviewShotsRecorded.setAdapter(adapter);
+        listShotsRecorded.setAdapter(adapter);
 
         // shooterReady Button functionality
         shooterReady.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +57,7 @@ public class TrackRound extends AppCompatActivity {
                 if (b.getText().toString() == getResources().getString(R.string.button_shooter_ready)) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
+                    bang.setEnabled(true);
 
                     if (!isStarted) {
 
@@ -71,8 +74,15 @@ public class TrackRound extends AppCompatActivity {
 
                 else {
 
+                    isStarted = false;
                     b.setText(getResources().getString(R.string.button_shooter_ready));
                     resetTimerData();
+                    bang.setEnabled(false);
+
+                    if (listArrayShots.size() >= 1) {
+
+                        clearTimer.setEnabled(true);
+                    }
                 }
             }
         });
@@ -88,6 +98,7 @@ public class TrackRound extends AppCompatActivity {
                 resetTimerData();
                 listArrayShots.clear();
                 adapter.notifyDataSetChanged();
+                clearTimer.setEnabled(false);
             }
         });
 
