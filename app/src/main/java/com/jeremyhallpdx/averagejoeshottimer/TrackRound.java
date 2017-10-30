@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,12 +18,13 @@ public class TrackRound extends AppCompatActivity {
     private Button shooterReady, bang;
     private ListView listviewShotsRecorded;
     private List<String> listArrayShots;
-    private ArrayAdapter<String> adapter;
+    private ShotsAdapter adapter;
     private Handler handler;
 
-    private long millisecondTime, startTime, timeBuff, updateTime = 0L;
+    private long millisecondTime, startTime, timeBuff, updateTime, shotCount = 0L;
+    private long shotRecordTime, shotRecordSplit = 0L;
+    private String shotReocordTitle;
     private int minutes, seconds, milliseconds;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class TrackRound extends AppCompatActivity {
         handler = new Handler();
 
         listArrayShots = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(TrackRound.this, R.layout.list_record_test, listArrayShots);
+        adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
         listviewShotsRecorded.setAdapter(adapter);
 
         shooterReady.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class TrackRound extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Make a "beep" to start the stopwatch and access the microphone to record shots.
+                // Make a "beep" to signal the timer start and access the microphone to record shots.
                 // Also must display the "shots" in the listView
                 startTime = SystemClock.uptimeMillis();
                 handler.postDelayed(runnable, 0);
@@ -61,6 +61,7 @@ public class TrackRound extends AppCompatActivity {
             public void onClick(View view) {
 
                 listArrayShots.add(displayTimer.getText().toString());
+                System.out.println(String.format(displayTimer.getText().toString()));
                 adapter.notifyDataSetChanged();
             }
         });
