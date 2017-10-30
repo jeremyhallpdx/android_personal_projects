@@ -15,28 +15,16 @@ import java.util.List;
 public class TrackRound extends AppCompatActivity {
 
     private TextView displayTimer;
-    private Button shooterReady, bang;
+    private Button shooterReady,clearTimer, bang;
     private ListView listviewShotsRecorded;
     private List<ShotsRecord> listArrayShots;
     private ShotsAdapter adapter;
     private Handler handler;
 
-    private long millisecondTime, startTime, timeBuff, updateTime, shotCount = 0L;
-    private long shotRecordTime, shotRecordSplit = 0L;
-    private String shotReocordTitle;
+    private boolean isStarted = false;
+
+    private long millisecondTime, startTime, updateTime = 0L;
     private int minutes, seconds, milliseconds;
-
-    public int getMinutes() {
-        return minutes;
-    }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public int getMilliseconds() {
-        return milliseconds;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +33,7 @@ public class TrackRound extends AppCompatActivity {
         setContentView(R.layout.activity_track_round);
 
         shooterReady = findViewById(R.id.button_shooter_ready);
+        clearTimer = findViewById(R.id.button_clear_timer_data);
         bang = findViewById(R.id.button_bang);
         displayTimer = findViewById(R.id.display_shot_timer);
         listviewShotsRecorded = findViewById(R.id.listview_shots_recorded);
@@ -55,18 +44,54 @@ public class TrackRound extends AppCompatActivity {
         adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
         listviewShotsRecorded.setAdapter(adapter);
 
+        // shooterReady Button functionality
         shooterReady.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                // Make a "beep" to signal the timer start and access the microphone to record shots.
-                // Also must display the "shots" in the listView
-                startTime = SystemClock.uptimeMillis();
-                handler.postDelayed(runnable, 0);
+                Button b = (Button) view;
+
+                if (b.getText().toString() == getResources().getString(R.string.button_shooter_ready)) {
+
+                    b.setText(getResources().getString(R.string.button_shooter_stop));
+
+                    if (!isStarted) {
+
+                        startTime = SystemClock.uptimeMillis();
+                        handler.postDelayed(runnable, 0);
+                    }
+
+                    else {
+
+                        startTime = SystemClock.uptimeMillis();
+                        handler.postDelayed(runnable, 0);
+                    }
+                }
+
+                else {
+
+                    b.setText(getResources().getString(R.string.button_shooter_ready));
+                    resetTimerData();
+                }
             }
         });
 
+        // resets timer and shot record data.
+        // will be implemented to a save feature that starts another activity
+        // and allows input of hits/crits and other round data.
+        clearTimer.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                resetTimerData();
+                listArrayShots.clear();
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        // bangButton simulates a recorded gunshot
         bang.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -75,20 +100,30 @@ public class TrackRound extends AppCompatActivity {
                 ShotsRecord shotRecord = new ShotsRecord(minutes, seconds, milliseconds, updateTime);
 
                 listArrayShots.add(shotRecord);
-                System.out.println(String.format(displayTimer.getText().toString()));
                 adapter.notifyDataSetChanged();
             }
         });
     }
 
-    public Runnable runnable = new Runnable () {
+    private Runnable runnable = new Runnable () {
 
         String timerTime;
 
         public void run() {
 
+/*
+            // plays the beep and sets the running flag to true
+            if (!isStarted) {
+
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mp.start();
+                startTime = SystemClock.uptimeMillis();
+                isStarted = true;
+            }
+*/
+
             millisecondTime = SystemClock.uptimeMillis() - startTime;
-            updateTime = timeBuff + millisecondTime;
+            updateTime = millisecondTime;
             seconds = (int) (updateTime / 1000);
             minutes = seconds / 60;
             seconds = seconds % 60;
@@ -101,4 +136,13 @@ public class TrackRound extends AppCompatActivity {
             handler.postDelayed(this, 0);
         }
     };
+
+    private void resetTimerData() {
+
+        millisecondTime = 0L;
+        startTime = 0L;
+        updateTime = 0L;
+        displayTimer.setText(getResources().getString(R.string.display_shot_timer));
+        handler.removeCallbacks(runnable);
+    }
 }

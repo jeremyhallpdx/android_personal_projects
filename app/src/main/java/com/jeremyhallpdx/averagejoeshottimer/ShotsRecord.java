@@ -18,18 +18,6 @@ public class ShotsRecord {
         this.updateTime = updateTime;
     }
 
-    public int getMinutes() {
-        return minutes;
-    }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public int getMilliseconds() {
-        return milliseconds;
-    }
-
     public String getTime () {
 
         String time = "" + this.minutes + ":"

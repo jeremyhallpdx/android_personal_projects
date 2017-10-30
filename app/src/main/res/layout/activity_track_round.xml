@@ -30,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/button_shooter_ready"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/button_clear_timer_data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         tools:text="@string/button_shooter_ready" />
@@ -42,12 +42,10 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintBottom_toTopOf="@+id/button_bang"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_shot_timer"
-        app:layout_constraintVertical_bias="0.504" />
+        app:layout_constraintTop_toBottomOf="@+id/display_shot_timer" />
 
     <TextView
         android:id="@+id/display_shot_timer"
@@ -55,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/display_shot_timer"
         android:textAlignment="center"
         android:textSize="40sp"
@@ -69,11 +67,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="@string/button_bang"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button_shooter_ready"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_clear_timer_data"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
         tools:text="@string/button_bang" />
+
+    <Button
+        android:id="@+id/button_clear_timer_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/button_clear_timer_data"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_shooter_ready"
+        app:layout_constraintEnd_toStartOf="@+id/button_bang" />
 
 </android.support.constraint.ConstraintLayout>

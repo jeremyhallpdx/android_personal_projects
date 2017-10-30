@@ -17,6 +17,8 @@
     <string name="display_avg_split">0.000</string>
     <string name="display_shot_timer">00:00:000</string>
     <string name="button_shooter_ready">Shooter Ready</string>
+    <string name="button_shooter_stop">Stop</string>
+    <string name="button_clear_timer_data">Clear</string>
     <string name="button_track_new_round">Track New Round</string>
     <string name="button_bang">Bang!</string>
     <string name="listView_recorded_shots"></string>
