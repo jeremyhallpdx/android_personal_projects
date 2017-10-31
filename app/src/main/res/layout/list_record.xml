@@ -12,6 +12,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/arsenal"
         android:text="@string/list_record_shot"
         android:textAlignment="textStart"
         android:textSize="30sp"
@@ -25,19 +26,24 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
         android:text="@string/list_record_shot_time"
         android:textAlignment="textEnd"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/space2"
-        app:layout_constraintTop_toTopOf="@+id/list_record_shot" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/list_record_split"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
         android:text="@string/list_record_split"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/list_record_shot_time"
         app:layout_constraintTop_toBottomOf="@+id/list_record_shot_time" />
 

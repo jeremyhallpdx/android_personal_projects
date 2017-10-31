@@ -49,343 +49,409 @@
         app:layout_constraintGuide_percent="0.8" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/label_stats_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="@string/label_firearm_accuracy"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_accuracy"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintTop_toBottomOf="@+id/label_detailed_stats" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/label_stats_critical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="@string/label_firearm_critical"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_critical"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_accuracy"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/label_stats_shots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="@string/label_firearm_shots"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_shots"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_critical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/display_stats_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/display_firearm_accuracy"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/label_stats_accuracy" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/display_stats_critical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="@string/display_firearm_critical"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_accuracy"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/display_stats_shots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="@string/display_firearm_shots"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_0"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_critical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/label_stats_draw_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/arsenal"
         android:text="@string/label_avg_draw"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/display_stats_accuracy" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/label_stats_reload_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
         android:text="@string/label_avg_reload"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_draw_avg"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/label_stats_split_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
         android:text="@string/label_avg_split"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_reload_avg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/display_stats_draw_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_stats_draw_avg" />
+
+    <TextView
+        android:id="@+id/display_stats_reload_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_draw_avg"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline15" />
+
+    <TextView
+        android:id="@+id/display_stats_split_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_reload_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline14" />
+
+    <TextView
+        android:id="@+id/label_prevRound_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/display_avg_draw"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_prev_round"
         android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:text="@string/display_avg_reload"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline15" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:text="@string/display_avg_split"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline14" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_prev_round_stats"
-        android:textAlignment="center"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/display_prevRound_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:text="@string/label_prev_round_date"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_prev_round_date"
         android:textAlignment="center"
-        android:textStyle="bold|italic"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_date"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline15" />
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_date" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/label_prevRound_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_accuracy"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/label_prevRound_date" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/label_prevRound_critical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_critical"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView15"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_accuracy"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/label_prevRound_shots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_shots"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_critical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/display_prevRound_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_prevRound_accuracy" />
+
+    <TextView
+        android:id="@+id/display_prevRound_critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_accuracy"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline15" />
+
+    <TextView
+        android:id="@+id/display_prevRound_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_critical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline14" />
+
+    <TextView
+        android:id="@+id/label_prevRound_draw_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_draw"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/display_prevRound_accuracy" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/label_prevRound_reload_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_reload"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_draw_avg"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/label_prevRound_split_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_split"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_reload_avg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/display_prevRound_draw_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/label_prevRound_draw_avg" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/display_prevRound_reload_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView21"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_draw_avg"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/display_prevRound_split_avg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_reload_avg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline15" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline14" />
-
-    <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/label_detailed_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:text="@string/label_firearm_stats"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_stats"
         android:textAlignment="center"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_refresh_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/button_refresh_data"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
