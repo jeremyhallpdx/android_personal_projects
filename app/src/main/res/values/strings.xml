@@ -15,7 +15,7 @@
     <string name="display_shot_timer">00:00:000</string>
     <string name="list_record_shot">Shot</string>
     <string name="list_record_shot_time">0.000</string>
-    <string name="list_record_split">0.000</string>
+    <string name="list_record_split_time">0.000</string>
     <string name="button_shooter_ready">Ready</string>
     <string name="button_shooter_stop">Stop</string>
     <string name="button_clear_timer_data">Clear</string>

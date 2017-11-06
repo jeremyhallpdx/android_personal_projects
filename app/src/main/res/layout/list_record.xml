@@ -37,20 +37,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/list_record_split"
+        android:id="@+id/list_record_split_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/arsenal"
-        android:text="@string/list_record_split"
+        android:text="@string/list_record_split_time"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/list_record_shot_time"
         app:layout_constraintTop_toBottomOf="@+id/list_record_shot_time" />
 
     <Space
         android:id="@+id/space2"
         android:layout_width="134dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"

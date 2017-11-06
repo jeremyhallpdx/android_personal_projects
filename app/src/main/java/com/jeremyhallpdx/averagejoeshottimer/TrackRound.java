@@ -54,7 +54,7 @@ public class TrackRound extends AppCompatActivity {
 
                 Button b = (Button) view;
 
-                if (b.getText().toString() == getResources().getString(R.string.button_shooter_ready)) {
+                if (b.getText().toString().equalsIgnoreCase(getResources().getString(R.string.button_shooter_ready))) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
                     bang.setEnabled(true);

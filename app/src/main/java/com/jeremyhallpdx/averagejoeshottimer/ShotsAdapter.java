@@ -58,7 +58,7 @@ public class ShotsAdapter extends ArrayAdapter {
 
         String shotText = "Shot " + (position + 1);
         String shotTime = currentShot.getTime();
-        String shotSplit = "";
+        String shotSplit = "0:00.000";
 
         viewHolder.recordShot.setText(shotText);
         viewHolder.recordShotTime.setText(shotTime);
@@ -82,9 +82,9 @@ public class ShotsAdapter extends ArrayAdapter {
 
         ViewHolder (View v) {
 
-            this.recordShot = (TextView) v.findViewById(R.id.list_record_shot);
-            this.recordShotTime = (TextView) v.findViewById(R.id.list_record_shot_time);
-            this.recordSplit = (TextView) v.findViewById(R.id.list_record_split);
+            this.recordShot = v.findViewById(R.id.list_record_shot);
+            this.recordShotTime = v.findViewById(R.id.list_record_shot_time);
+            this.recordSplit = v.findViewById(R.id.list_record_split_time);
         }
     }
 }
