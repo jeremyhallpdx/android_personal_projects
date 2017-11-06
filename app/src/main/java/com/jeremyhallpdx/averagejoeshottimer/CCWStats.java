@@ -9,6 +9,4 @@ public class CCWStats extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ccwstats);
     }
-
-
 }
