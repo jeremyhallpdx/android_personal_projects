@@ -73,7 +73,6 @@ public class TrackRound extends AppCompatActivity {
         bang.setEnabled(false);
 
         handler = new Handler();
-
         listArrayShots = new ArrayList<>();
         adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
         listShotsRecorded.setAdapter(adapter);
