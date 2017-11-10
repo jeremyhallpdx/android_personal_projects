@@ -31,6 +31,7 @@ public class ShotsAdapter extends ArrayAdapter {
 
     @Override
     public int getCount() {
+
         return shots.size();
     }
 
@@ -43,7 +44,6 @@ public class ShotsAdapter extends ArrayAdapter {
         if (convertView == null) {
 
             convertView = layoutInflater.inflate(layoutResource, parent, false);
-
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }

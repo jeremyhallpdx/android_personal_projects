@@ -7,6 +7,7 @@
     <string name="label_avg_reload">Reload (avg)</string>
     <string name="label_avg_split">Split (avg)</string>
     <string name="label_stats">Stats</string>
+    <string name="label_combined_stats">Combined Stats</string>
     <string name="label_prev_round">Previous Round:</string>
     <string name="display_prev_round_date">mm/dd/yyyy</string>
     <string name="display_percent">0%</string>

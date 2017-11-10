@@ -45,31 +45,32 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id) {
 
-            case R.id.mnuCcw:
+            case R.id.mnuCombined:
+                item.setChecked(true);
+                intent = new Intent(this, MainActivity.class);
+                break;
 
+            case R.id.mnuCcw:
                 item.setChecked(true);
                 intent = new Intent (this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "ccw");
                 break;
 
             case R.id.mnuSidearm:
-
                 item.setChecked(true);
-                intent = new Intent(this, DisplayWeaponStats.class);
+                intent = new Intent (this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "sidearm");
                 break;
 
             case R.id.mnuCarbine:
-
                 item.setChecked(true);
-                intent = new Intent(this, DisplayWeaponStats.class);
+                intent = new Intent (this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "carbine");
                 break;
 
             case R.id.mnuMarksman:
-
                 item.setChecked(true);
-                intent = new Intent(this, DisplayWeaponStats.class);
+                intent = new Intent (this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "marksman");
                 break;
 
