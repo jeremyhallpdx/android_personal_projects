@@ -22,4 +22,10 @@
     <string name="button_refresh_data">Refresh</string>
     <string name="button_new_round">New Round</string>
     <string name="button_bang">Bang!</string>
+    <string name="mnu_combined">Combined</string>
+    <string name="mnu_ccw">CCW</string>
+    <string name="mnu_sidearm">Sidearm</string>
+    <string name="mnu_carbine">Carbine</string>
+    <string name="mnu_marksman">Marksman</string>
+    <string name="mnu_settings">Settings</string>
 </resources>
