@@ -20,9 +20,7 @@ public class TrackRound extends AppCompatActivity {
     private List<ShotsRecord> listArrayShots;
     private ShotsAdapter adapter;
     private Handler handler;
-
     private boolean isStarted = false;
-
     private long millisecondTime, startTime, updateTime = 0L;
     private int minutes, seconds, milliseconds;
 
@@ -33,20 +31,16 @@ public class TrackRound extends AppCompatActivity {
         public void run() {
 
             if (!isStarted) {
-
-                startTime = SystemClock.uptimeMillis();
-                isStarted = true;
-            }
 /*
-            // plays the beep and sets the running flag to true
-            if (!isStarted) {
-
+                // Will be used to play a signal that the timer is starting...
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
                 mp.start();
+*/
+                bang.setEnabled(true);
                 startTime = SystemClock.uptimeMillis();
                 isStarted = true;
             }
-*/
+
             millisecondTime = SystemClock.uptimeMillis() - startTime;
             updateTime = millisecondTime;
             seconds = (int) (updateTime / 1000);
@@ -100,17 +94,10 @@ public class TrackRound extends AppCompatActivity {
                 if (b.getText().toString().equalsIgnoreCase(getResources().getString(R.string.button_shooter_ready))) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
-                    bang.setEnabled(true);
 
                     if (!isStarted) {
 
                         handler.postDelayed(runnable, startDelay);
-                    }
-
-                    else {
-
-                        startTime = SystemClock.uptimeMillis();
-                        handler.postDelayed(runnable, 0);
                     }
                 }
 
@@ -123,6 +110,7 @@ public class TrackRound extends AppCompatActivity {
 
                     if (listArrayShots.size() >= 1) {
 
+                        shooterReady.setEnabled(false);
                         clearTimer.setEnabled(true);
                     }
                 }
@@ -141,6 +129,7 @@ public class TrackRound extends AppCompatActivity {
                 listArrayShots.clear();
                 adapter.notifyDataSetChanged();
                 clearTimer.setEnabled(false);
+                shooterReady.setEnabled(true);
             }
         });
 

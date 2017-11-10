@@ -3,7 +3,7 @@ package com.jeremyhallpdx.averagejoeshottimer;
 import android.os.Bundle;
 import android.view.Menu;
 
-public class WeaponStats extends MainActivity {
+public class DisplayWeaponStats extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

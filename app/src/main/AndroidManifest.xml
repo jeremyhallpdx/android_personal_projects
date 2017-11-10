@@ -20,7 +20,7 @@
             android:name=".TrackRound"
             android:parentActivityName=".MainActivity"></activity>
         <activity
-            android:name=".WeaponStats"
+            android:name=".DisplayWeaponStats"
             android:parentActivityName=".MainActivity"></activity>
 
         <meta-data
