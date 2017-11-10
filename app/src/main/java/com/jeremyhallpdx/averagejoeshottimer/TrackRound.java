@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class TrackRound extends AppCompatActivity {
 
@@ -25,6 +26,42 @@ public class TrackRound extends AppCompatActivity {
     private long millisecondTime, startTime, updateTime = 0L;
     private int minutes, seconds, milliseconds;
 
+    private Runnable runnable = new Runnable () {
+
+        String timerTime;
+
+        public void run() {
+
+            if (!isStarted) {
+
+                startTime = SystemClock.uptimeMillis();
+                isStarted = true;
+            }
+/*
+            // plays the beep and sets the running flag to true
+            if (!isStarted) {
+
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mp.start();
+                startTime = SystemClock.uptimeMillis();
+                isStarted = true;
+            }
+*/
+            millisecondTime = SystemClock.uptimeMillis() - startTime;
+            updateTime = millisecondTime;
+            seconds = (int) (updateTime / 1000);
+            minutes = seconds / 60;
+            seconds = seconds % 60;
+            milliseconds = (int) (updateTime % 1000);
+            timerTime = "" + minutes + ":"
+                    + String.format("%02d", seconds) + ":"
+                    + String.format("%03d", milliseconds);
+
+            displayTimer.setText(timerTime);
+            handler.postDelayed(this, 0);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,8 +74,8 @@ public class TrackRound extends AppCompatActivity {
         displayTimer = findViewById(R.id.display_shot_timer);
         ListView listShotsRecorded = findViewById(R.id.listview_shots_recorded);
 
-        bang.setEnabled(false);
         clearTimer.setEnabled(false);
+        bang.setEnabled(false);
 
         handler = new Handler();
 
@@ -54,6 +91,12 @@ public class TrackRound extends AppCompatActivity {
 
                 Button b = (Button) view;
 
+                Random r = new Random();
+
+                int l = 1000;
+                int h = 5000;
+                int startDelay = r.nextInt(h - l) + 1;
+
                 if (b.getText().toString().equalsIgnoreCase(getResources().getString(R.string.button_shooter_ready))) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
@@ -61,8 +104,7 @@ public class TrackRound extends AppCompatActivity {
 
                     if (!isStarted) {
 
-                        startTime = SystemClock.uptimeMillis();
-                        handler.postDelayed(runnable, 0);
+                        handler.postDelayed(runnable, startDelay);
                     }
 
                     else {
@@ -116,37 +158,7 @@ public class TrackRound extends AppCompatActivity {
         });
     }
 
-    private Runnable runnable = new Runnable () {
 
-        String timerTime;
-
-        public void run() {
-
-/*
-            // plays the beep and sets the running flag to true
-            if (!isStarted) {
-
-                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
-                mp.start();
-                startTime = SystemClock.uptimeMillis();
-                isStarted = true;
-            }
-*/
-
-            millisecondTime = SystemClock.uptimeMillis() - startTime;
-            updateTime = millisecondTime;
-            seconds = (int) (updateTime / 1000);
-            minutes = seconds / 60;
-            seconds = seconds % 60;
-            milliseconds = (int) (updateTime % 1000);
-            timerTime = "" + minutes + ":"
-                    + String.format("%02d", seconds) + ":"
-                    + String.format("%03d", milliseconds);
-
-            displayTimer.setText(timerTime);
-            handler.postDelayed(this, 0);
-        }
-    };
 
     private void resetTimerData() {
 
