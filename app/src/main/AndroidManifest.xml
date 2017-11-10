@@ -19,7 +19,9 @@
         <activity
             android:name=".TrackRound"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".CCWStats"></activity>
+        <activity
+            android:name=".WeaponStats"
+            android:parentActivityName=".MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
