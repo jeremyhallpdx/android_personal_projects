@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Created by Jeremy on 10/29/17.
+ *
+ * Custom adapter to fill the listView widget in the TrackRound activity with shot records
+ * includes logic to calculate split times with each shot after 1.
  */
 
 public class ShotsAdapter extends ArrayAdapter {
@@ -23,6 +26,7 @@ public class ShotsAdapter extends ArrayAdapter {
     private List<ShotsRecord> shots;
 
     public ShotsAdapter(@NonNull Context context, int resource, List<ShotsRecord> shots) {
+
         super(context, resource);
         this.layoutResource = resource;
         this.layoutInflater = LayoutInflater.from(context);
@@ -63,7 +67,7 @@ public class ShotsAdapter extends ArrayAdapter {
         viewHolder.recordShot.setText(shotText);
         viewHolder.recordShotTime.setText(shotTime);
 
-        if (position > 0) {
+        if (position > 0) {  // if there are previous shots to calculate split times...
 
             prevShot = shots.get(position - 1);
             shotSplit = currentShot.getSplit(prevShot);

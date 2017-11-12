@@ -20,8 +20,7 @@
             android:name=".TrackRound"
             android:parentActivityName=".MainActivity"></activity>
         <activity
-            android:name=".DisplayWeaponStats"
-            ></activity>
+            android:name=".DisplayWeaponStats"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
