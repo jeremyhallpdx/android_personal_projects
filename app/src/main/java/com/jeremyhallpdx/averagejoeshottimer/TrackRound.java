@@ -25,6 +25,11 @@ public class TrackRound extends AppCompatActivity {
     private long millisecondTime, startTime, updateTime = 0L;
     private int minutes, seconds, milliseconds;
 
+    //private MediaPlayer mp = new MediaPlayer();
+    // thought about declaring this here so i can call .release() in the "stop" timer functionality...
+
+
+    // Runnable to run the shot timer
     private Runnable runnable = new Runnable () {
 
         String timerTime;
@@ -32,9 +37,11 @@ public class TrackRound extends AppCompatActivity {
         public void run() {
 
             if (!isStarted) {
-/*
                 // Will be used to play a signal that the timer is starting...
-                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                // Check with Fasching how this works
+/*
+                mp = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mp.setVolume(100.0f, 100.0f);
                 mp.start();
 */
                 bang.setEnabled(true);
@@ -63,16 +70,21 @@ public class TrackRound extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_round);
 
+        // buttons and other widgets used to handle round data
         shooterReady = findViewById(R.id.button_shooter_ready);
         clearTimer = findViewById(R.id.button_clear_timer_data);
         bang = findViewById(R.id.button_bang);
         displayTimer = findViewById(R.id.display_shot_timer);
         ListView listShotsRecorded = findViewById(R.id.listview_shots_recorded);
 
+        // sets these buttons to disabled until they are actually needed
         clearTimer.setEnabled(false);
         bang.setEnabled(false);
 
+        // runs the timer on a separate thread??
         handler = new Handler();
+
+        // list to hold the recroded to shots to pass to the adapter class
         listArrayShots = new ArrayList<>();
         adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
         listShotsRecorded.setAdapter(adapter);
@@ -85,12 +97,14 @@ public class TrackRound extends AppCompatActivity {
 
                 Button b = (Button) view;
 
+                // creates a random delay for the shot timer to start
                 Random r = new Random();
 
                 int l = 1000;
                 int h = 5000;
                 int startDelay = r.nextInt(h - l) + 1;
 
+                // starts the timer if it's not running
                 if (b.getText().toString().equalsIgnoreCase(getResources().getString(R.string.button_shooter_ready))) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
@@ -101,14 +115,14 @@ public class TrackRound extends AppCompatActivity {
                     }
                 }
 
-                else {
+                else {  // stops the timer if it is running
 
                     isStarted = false;
                     b.setText(getResources().getString(R.string.button_shooter_ready));
                     resetTimerData();
                     bang.setEnabled(false);
 
-                    if (listArrayShots.size() >= 1) {
+                    if (listArrayShots.size() >= 1) {  // these buttons are only enabled if they can be used
 
                         shooterReady.setEnabled(false);
                         clearTimer.setEnabled(true);
@@ -155,6 +169,7 @@ public class TrackRound extends AppCompatActivity {
         return true;
     }
 
+    // method to reset the timer
     private void resetTimerData() {
 
         millisecondTime = 0L;
