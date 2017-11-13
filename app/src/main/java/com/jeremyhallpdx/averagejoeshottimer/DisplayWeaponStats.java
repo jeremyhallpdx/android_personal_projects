@@ -1,7 +1,7 @@
 package com.jeremyhallpdx.averagejoeshottimer;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +16,7 @@ public class DisplayWeaponStats extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_weapon_stats);
 
+        // starts the TrackRound activity
         Button button = findViewById(R.id.button_track_new_round);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -32,18 +33,9 @@ public class DisplayWeaponStats extends MainActivity {
 
         getMenuInflater().inflate(R.menu.stats_menu, menu);
 
-        // ask Fasching about this try/catch.  how best to implement this check?
-        String checkWeapon = "";
-
-        try {
-
-            checkWeapon = getIntent().getExtras().get(WEAPON_TYPE).toString();
-        }
-
-        catch (NullPointerException e) {
-
-            Log.d(TAG, "onCreateOptionsMenu: Error in intent bundle: " + e.getMessage());
-        }
+        // gets the extraString from the intent to determine which stat set to check
+        Intent intent = getIntent();
+        String checkWeapon = intent.getStringExtra(MainActivity.WEAPON_TYPE);
 
         switch (checkWeapon) {
 

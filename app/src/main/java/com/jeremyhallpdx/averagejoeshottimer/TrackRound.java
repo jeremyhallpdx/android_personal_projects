@@ -84,7 +84,7 @@ public class TrackRound extends AppCompatActivity {
         // runs the timer on a separate thread??
         handler = new Handler();
 
-        // list to hold the recroded to shots to pass to the adapter class
+        // list to hold the recorded to shots to pass to the adapter class
         listArrayShots = new ArrayList<>();
         adapter = new ShotsAdapter(TrackRound.this, R.layout.list_record, listArrayShots);
         listShotsRecorded.setAdapter(adapter);

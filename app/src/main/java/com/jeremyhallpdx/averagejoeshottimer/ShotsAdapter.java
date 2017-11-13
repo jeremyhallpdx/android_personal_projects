@@ -36,13 +36,14 @@ public class ShotsAdapter extends ArrayAdapter {
     @Override
     public int getCount() {
 
-        return shots.size();
+        return shots.size();  // returns the number of shots in the List<> for use in calculating views for the ListView
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+        // ViewHolder Pattern
         ViewHolder viewHolder;
 
         if (convertView == null) {
@@ -57,15 +58,17 @@ public class ShotsAdapter extends ArrayAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        // places recorded shots into the listView
         ShotsRecord currentShot = shots.get(position);
         ShotsRecord prevShot = null;
 
+        // String vars for setting widget text
         String shotText = "Shot " + (position + 1);
         String shotTime = currentShot.getTime();
         String shotSplit = "0:00.000";
 
-        viewHolder.recordShot.setText(shotText);
-        viewHolder.recordShotTime.setText(shotTime);
+        viewHolder.recordShot.setText(shotText);  // set the shot number
+        viewHolder.recordShotTime.setText(shotTime);  // set the shot time
 
         if (position > 0) {  // if there are previous shots to calculate split times...
 
@@ -73,11 +76,12 @@ public class ShotsAdapter extends ArrayAdapter {
             shotSplit = currentShot.getSplit(prevShot);
         }
 
-        viewHolder.recordSplit.setText(shotSplit);
+        viewHolder.recordSplit.setText(shotSplit);  // set the split times
 
         return convertView;
     }
 
+    // inner ViewHolder class for an efficient ListView
     private class ViewHolder {
 
         final TextView recordShot;

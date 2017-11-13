@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // starts TrackRound activity
         Button trackNewRound = findViewById(R.id.button_track_new_round);
 
         trackNewRound.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // method to start the TrackRound activity.  used by other classes...
     public void trackRound(View view) {
 
         Intent intent = new Intent (this, TrackRound.class);
