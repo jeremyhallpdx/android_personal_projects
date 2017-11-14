@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                trackRound(view);
+                //trackRound(view);
+                Intent intent = new Intent (MainActivity.this, TrackRound.class);
+                startActivity(intent);
             }
         });
     }
@@ -44,34 +46,34 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent;
 
-        switch (id) {
+        switch (id) {  // launches the DetailedWeaponStats activity
 
             case R.id.mnuCombined:
                 item.setChecked(true);
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(MainActivity.this, MainActivity.class);
                 break;
 
             case R.id.mnuCcw:
                 item.setChecked(true);
-                intent = new Intent (this, DisplayWeaponStats.class);
+                intent = new Intent (MainActivity.this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "ccw");
                 break;
 
             case R.id.mnuSidearm:
                 item.setChecked(true);
-                intent = new Intent (this, DisplayWeaponStats.class);
+                intent = new Intent (MainActivity.this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "sidearm");
                 break;
 
             case R.id.mnuCarbine:
                 item.setChecked(true);
-                intent = new Intent (this, DisplayWeaponStats.class);
+                intent = new Intent (MainActivity.this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "carbine");
                 break;
 
             case R.id.mnuMarksman:
                 item.setChecked(true);
-                intent = new Intent (this, DisplayWeaponStats.class);
+                intent = new Intent (MainActivity.this, DisplayWeaponStats.class);
                 intent.putExtra(WEAPON_TYPE, "marksman");
                 break;
 
@@ -83,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    // method to start the TrackRound activity.  used by other classes...
-    public void trackRound(View view) {
-
-        Intent intent = new Intent (this, TrackRound.class);
-        startActivity(intent);
-    }
+    // method to start the TrackRound activity.
+//    public void trackRound(View view) {
+//
+//        Intent intent = new Intent (this, TrackRound.class);
+//        startActivity(intent);
+//    }
 }

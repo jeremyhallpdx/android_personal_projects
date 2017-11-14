@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class DisplayWeaponStats extends MainActivity {
+public class DisplayWeaponStats extends MainActivity {  // is it ok to subclass the main activity??
 
     private static final String TAG = "DisplayWeaponStats";
 
@@ -23,7 +23,8 @@ public class DisplayWeaponStats extends MainActivity {
             @Override
             public void onClick(View view) {
 
-                trackRound(view);
+                Intent intent = new Intent (DisplayWeaponStats.this, TrackRound.class);
+                startActivity(intent);
             }
         });
     }

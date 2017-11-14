@@ -2,6 +2,8 @@ package com.jeremyhallpdx.averagejoeshottimer;
 
 /**
  * Created by Jeremy on 10/30/17.
+ *
+ * Class to contain each recorded shot which is essentially just a timestamp
  */
 
 public class ShotsRecord {
@@ -18,6 +20,7 @@ public class ShotsRecord {
         this.updateTime = updateTime;
     }
 
+    // returns the composed timestamp as a string for a shot
     public String getTime () {
 
         String time = "" + this.minutes + ":"
@@ -27,6 +30,7 @@ public class ShotsRecord {
         return time;
     }
 
+    // Method to get the split time between shots as a string
     public String getSplit(ShotsRecord prevRecord) {
 
         long time = this.updateTime - prevRecord.updateTime;

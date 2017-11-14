@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jeremyhallpdx.averagejoeshottimer.DisplayWeaponStats">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/label_stats_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_accuracy"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/label_stats_critical"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_detailed_stats" />
+
+    <TextView
+        android:id="@+id/label_stats_critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_critical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_accuracy"
+        app:layout_constraintEnd_toStartOf="@+id/label_stats_shots"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_stats_accuracy" />
+
+    <TextView
+        android:id="@+id/label_stats_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_shots"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_critical"
+        app:layout_constraintEnd_toStartOf="@+id/label_stats_draw_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_stats_critical" />
+
+    <TextView
+        android:id="@+id/display_stats_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_accuracy"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_accuracy"
+        app:layout_constraintTop_toBottomOf="@+id/label_stats_accuracy" />
+
+    <TextView
+        android:id="@+id/display_stats_critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_accuracy"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_critical"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_critical" />
+
+    <TextView
+        android:id="@+id/display_stats_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_critical"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_shots"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_shots" />
+
+    <TextView
+        android:id="@+id/label_stats_draw_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_draw"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_shots"
+        app:layout_constraintEnd_toStartOf="@+id/label_stats_reload_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_stats_shots" />
+
+    <TextView
+        android:id="@+id/label_stats_reload_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_reload"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_draw_avg"
+        app:layout_constraintEnd_toStartOf="@+id/label_stats_split_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_stats_draw_avg" />
+
+    <TextView
+        android:id="@+id/label_stats_split_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_split"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_stats_reload_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_stats_reload_avg" />
+
+    <TextView
+        android:id="@+id/display_stats_draw_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_shots"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_draw_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_draw_avg" />
+
+    <TextView
+        android:id="@+id/display_stats_reload_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_draw_avg"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_reload_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_reload_avg" />
+
+    <TextView
+        android:id="@+id/display_stats_split_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_stats_reload_avg"
+        app:layout_constraintEnd_toEndOf="@+id/label_stats_split_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_stats_split_avg" />
+
+    <TextView
+        android:id="@+id/label_prevRound_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_prev_round"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
+
+    <TextView
+        android:id="@+id/display_prevRound_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_prev_round_date"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_date" />
+
+    <TextView
+        android:id="@+id/label_prevRound_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_accuracy"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/label_prevRound_critical"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_prevRound_date" />
+
+    <TextView
+        android:id="@+id/label_prevRound_critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_critical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_accuracy"
+        app:layout_constraintEnd_toStartOf="@+id/label_prevRound_shots"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_accuracy" />
+
+    <TextView
+        android:id="@+id/label_prevRound_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_shots"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_critical"
+        app:layout_constraintEnd_toStartOf="@+id/label_prevRound_draw_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_critical" />
+
+    <TextView
+        android:id="@+id/display_prevRound_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_accuracy"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_accuracy"
+        app:layout_constraintTop_toBottomOf="@+id/label_prevRound_accuracy" />
+
+    <TextView
+        android:id="@+id/display_prevRound_critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_percent"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_accuracy"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_critical"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_critical" />
+
+    <TextView
+        android:id="@+id/display_prevRound_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_critical"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_shots"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_shots" />
+
+    <TextView
+        android:id="@+id/label_prevRound_draw_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_draw"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_shots"
+        app:layout_constraintEnd_toStartOf="@+id/label_prevRound_reload_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_shots" />
+
+    <TextView
+        android:id="@+id/label_prevRound_reload_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_reload"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_draw_avg"
+        app:layout_constraintEnd_toStartOf="@+id/label_prevRound_split_avg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_draw_avg" />
+
+    <TextView
+        android:id="@+id/label_prevRound_split_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_avg_split"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label_prevRound_reload_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/label_prevRound_reload_avg" />
+
+    <TextView
+        android:id="@+id/display_prevRound_draw_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_shots"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_draw_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_draw_avg" />
+
+    <TextView
+        android:id="@+id/display_prevRound_reload_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_draw_avg"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_reload_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_reload_avg" />
+
+    <TextView
+        android:id="@+id/display_prevRound_split_avg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/display_time_seconds"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_prevRound_reload_avg"
+        app:layout_constraintEnd_toEndOf="@+id/label_prevRound_split_avg"
+        app:layout_constraintStart_toStartOf="@+id/label_prevRound_split_avg" />
+
+    <TextView
+        android:id="@+id/label_detailed_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/label_detailed_stats"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_refresh_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/button_refresh_data"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_track_new_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline16" />
+
+    <Button
+        android:id="@+id/button_track_new_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="@font/arsenal"
+        android:text="@string/button_new_round"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline17" />
+
+</android.support.constraint.ConstraintLayout>

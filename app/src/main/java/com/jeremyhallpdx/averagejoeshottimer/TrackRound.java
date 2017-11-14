@@ -26,8 +26,7 @@ public class TrackRound extends AppCompatActivity {
     private int minutes, seconds, milliseconds;
 
     //private MediaPlayer mp = new MediaPlayer();
-    // thought about declaring this here so i can call .release() in the "stop" timer functionality...
-
+    // thought about declaring this here so i can call .release() in the "STOP TIMER" onClick functionality...
 
     // Runnable to run the shot timer
     private Runnable runnable = new Runnable () {
@@ -104,17 +103,19 @@ public class TrackRound extends AppCompatActivity {
                 int h = 5000;
                 int startDelay = r.nextInt(h - l) + 1;
 
-                // starts the timer if it's not running
+                // START TIMER
                 if (b.getText().toString().equalsIgnoreCase(getResources().getString(R.string.button_shooter_ready))) {
 
                     b.setText(getResources().getString(R.string.button_shooter_stop));
 
-                    if (!isStarted) {
+                    if (!isStarted) {  // starts the timer if it's not running
+
 
                         handler.postDelayed(runnable, startDelay);
                     }
                 }
 
+                // STOP TIMER
                 else {  // stops the timer if it is running
 
                     isStarted = false;

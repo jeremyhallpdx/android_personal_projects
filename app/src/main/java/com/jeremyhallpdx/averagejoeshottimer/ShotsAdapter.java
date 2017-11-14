@@ -12,10 +12,10 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Jeremy on 10/29/17.
+ * Created by Jeremy on 10/30/17.
  *
  * Custom adapter to fill the listView widget in the TrackRound activity with shot records
- * includes logic to calculate split times with each shot after 1.
+ * includes logic to get split times for each shot after the first.
  */
 
 public class ShotsAdapter extends ArrayAdapter {
@@ -60,6 +60,7 @@ public class ShotsAdapter extends ArrayAdapter {
 
         // places recorded shots into the listView
         ShotsRecord currentShot = shots.get(position);
+        // uses the prevshot if it exists to get the split time
         ShotsRecord prevShot = null;
 
         // String vars for setting widget text
