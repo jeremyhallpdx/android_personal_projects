@@ -141,8 +141,10 @@ public class TrackRound extends AppCompatActivity {
             public void onClick(View view) {
 
                 resetTimerData();
-                listArrayShots.clear();
-                adapter.notifyDataSetChanged();
+                listArrayShots.clear(); // clears the List<>
+                adapter.notifyDataSetChanged();  // clears the listView widget of recorded shots
+
+                // disables these buttons until they are needed again
                 clearTimer.setEnabled(false);
                 shooterReady.setEnabled(true);
             }
@@ -156,8 +158,8 @@ public class TrackRound extends AppCompatActivity {
 
                 ShotsRecord shotRecord = new ShotsRecord(minutes, seconds, milliseconds, updateTime);
 
-                listArrayShots.add(shotRecord);
-                adapter.notifyDataSetChanged();
+                listArrayShots.add(shotRecord);  // adds a shotRecord obj to the List.
+                adapter.notifyDataSetChanged();  // displays the recorded shot in the ListView widget.
             }
         });
     }
